@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+:root {
+  --mobileWidth: 375px;
+  --desktopWidth: 1440px;
+
+  --violet: hsl(257, 40%, 49%);
+  --softMagenta: hsl(300, 69%, 71%);
+}
+
+body {
+  background-color: var(--violet);
+  background-image: url("./images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.container {
+  padding: 1.5rem;
+  width: 100%;
+  max-width: var(--mobileWidth);
+}
+
+.logo {
+  width: 45%;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.img-div {
+  margin-bottom: 5rem;
+}
+
+.text-div {
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 1.7rem;
+  margin-bottom: 0.4em;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.sub-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  margin-bottom: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.btn {
+  width: 75%;
+  max-width: 100%;
+  padding: 1em 0;
+  font-size: 0.9rem;
+  letter-spacing: 1.1px;
+  border-radius: 2rem;
+  color: hsl(257, 40%, 49%);
+  border: unset;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: var(--softMagenta);
+  box-shadow: 0px 5px 21px 3px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  margin: 3rem 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.link {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 0 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link:hover {
+  border: 1px solid var(--softMagenta);
+  color: var(--softMagenta);
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  body {
+    background-image: url(./images/bg-desktop.svg);
+  }
+
+  .container {
+    max-width: var(--desktopWidth);
+    display: grid;
+    grid-template-columns: 58% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "logo text"
+      "img text";
+    grid-gap: 4rem;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+    margin: 0 1rem;
+  }
+  .logo {
+    grid-area: logo;
+    width: 25%;
+    margin-top: 2rem;
+  }
+  .img-div {
+    grid-area: img;
+  }
+  .text-div {
+    grid-area: text;
+    align-self: center;
+    text-align: left;
+  }
+
+  .main-heading {
+    font-size: 2.7rem;
+  }
+
+  .btn {
+    width: 36%;
+    padding: 1.3em 0;
+  }
+
+  footer {
+    display: flex;
+    justify-content: end;
+    width: 77%;
+  }
+}
